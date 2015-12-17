@@ -17,5 +17,6 @@ set(SOURCE_FILES main.cpp
         Exceptions.cpp Exceptions.h
         Strategy.h
         DefaultAgentStrategy.cpp DefaultAgentStrategy.h
-        Gaming.h AggressiveAgentStrategy.cpp AggressiveAgentStrategy.h)
+        Gaming.h AggressiveAgentStrategy.cpp AggressiveAgentStrategy.h Game.cpp Gaming.cpp)
 add_executable(pa5game ${SOURCE_FILES})
+add_definitions(-std=c++11)

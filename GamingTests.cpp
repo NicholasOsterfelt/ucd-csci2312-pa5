@@ -58,7 +58,7 @@ void test_piece_smoketest(ErrorContext &ec) {
     }
     ec.result(pass);
 }
-
+//
 void test_piece_print(ErrorContext &ec, unsigned int numRuns) {
     bool pass;
 
@@ -99,7 +99,8 @@ void test_piece_print(ErrorContext &ec, unsigned int numRuns) {
                 std::string matchStr(m[0]);
                 std::regex r("[[:d:]]{1,}");
                 std::regex_search(matchStr, m, r);
-                id = stoi(m[0]);
+                std::stringstream s1(m[0]);
+                s1 >> id;
                 pass = true;
             }
 
@@ -112,8 +113,8 @@ void test_piece_print(ErrorContext &ec, unsigned int numRuns) {
         }
     }
 }
-
-// Piece aging and viability
+//
+//// Piece aging and viability
 void test_piece_aging(ErrorContext &ec, unsigned int numRuns) {
     bool pass;
 
@@ -185,8 +186,8 @@ void test_piece_aging(ErrorContext &ec, unsigned int numRuns) {
 
     }
 }
-
-// Piece energy/capacity
+//
+//// Piece energy/capacity
 void test_piece_energy(ErrorContext &ec, unsigned int numRuns) {
     bool pass;
 
@@ -217,8 +218,8 @@ void test_piece_energy(ErrorContext &ec, unsigned int numRuns) {
         }
     }
 }
-
-// Taking turns
+//
+//// Taking turns
 void test_piece_turntaking(ErrorContext &ec, unsigned int numRuns) {
     bool pass;
 
@@ -558,7 +559,7 @@ void test_piece_turntaking(ErrorContext &ec, unsigned int numRuns) {
     }
 }
 
-// Piece interaction operator*
+//// Piece interaction operator*
 void test_piece_interaction(ErrorContext &ec, unsigned int numRuns) {
     bool pass;
 
@@ -636,10 +637,10 @@ void test_piece_interaction(ErrorContext &ec, unsigned int numRuns) {
     }
 }
 
-
-// - - - - - - - - - - S U R R O U N D I N G S - - - - - - - - - -
-
-// Surroundings (vector of enums of type PieceType) smoke test
+//
+//// - - - - - - - - - - S U R R O U N D I N G S - - - - - - - - - -
+//
+//// Surroundings (vector of enums of type PieceType) smoke test
 void test_surroundings_smoketest(ErrorContext &ec) {
     bool pass;
 
@@ -1046,7 +1047,7 @@ void test_game_populate(ErrorContext &ec, unsigned int numRuns) {
         }
     }
 }
-
+//
 // Printing of a game
 void test_game_print(ErrorContext &ec, unsigned int numRuns) {
     bool pass;

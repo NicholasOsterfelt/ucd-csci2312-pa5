@@ -5,12 +5,12 @@
 
 #include "ErrorContext.h"
 #include "GamingTests.h"
-
+#include "Game.h"
 using std::cout;
 using std::endl;
 
 using namespace Testing;
-
+using namespace Gaming;
 int main() {
 
     const int NumIters = 3;
@@ -27,22 +27,24 @@ int main() {
     cout << endl;
 
     ErrorContext ec(cout);
+    Game g(3,5, false);
 
-    // piece tests
+    cout << g;
+//    // piece tests
     test_piece_smoketest(ec);
     test_piece_print(ec, NumIters);
     test_piece_aging(ec, NumIters);
     test_piece_energy(ec, NumIters);
     test_piece_turntaking(ec, NumIters);
     test_piece_interaction(ec, NumIters);
-
-    // surroundings tests
+//
+//    // surroundings tests
     test_surroundings_smoketest(ec);
-
-    // action tests
+//
+//    // action tests
     test_action_smoketest(ec);
-
-    // game tests
+//
+//    // game tests
     test_game_smoketest(ec);
     test_game_populate(ec, NumIters);
     test_game_print(ec, NumIters);
